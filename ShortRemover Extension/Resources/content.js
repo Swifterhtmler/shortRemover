@@ -15,7 +15,9 @@ const SELECTORS = [
       'ytm-reel-shelf-renderer',
       'yt-shelf-header-layout',
       'ytd-item-section-renderer ytGridShelfViewModelHostHasBottomButton',
-      ''
+      'ytm-pivot-bar-item-renderer:has(a[href="/shorts"])',
+      'div.pivot-shorts',
+      'ytm-pivot-bar-renderer a[href="/shorts"]',
 ];
 
 let enabled = true;

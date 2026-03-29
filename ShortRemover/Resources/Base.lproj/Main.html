@@ -102,6 +102,9 @@
       padding: 1px 6px;
       color: #ddd;
     }
+
+    .platform { display: none; }
+    .platform.active { display: block; }
   </style>
 </head>
 <body>
@@ -110,20 +113,46 @@
     <h1>ShortRemover</h1>
     <p class="tagline">Watch YouTube the way it was meant to be — without Shorts</p>
 
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-text">Open Safari settings with <kbd>⌘</kbd> + <kbd>,</kbd></div>
+    <!-- Mac instructions -->
+    <div class="platform" id="mac">
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-text">Open Safari settings with <kbd>⌘</kbd> + <kbd>,</kbd></div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-text">Go to the <strong>Extensions</strong> tab and find ShortRemover</div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-text">Enable it and set the destination to <strong>youtube</strong></div>
+        </div>
       </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-text">Go to the <strong>Extensions</strong> tab and find ShortRemover</div>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-text">Enable it and set the destination to <strong>youtube</strong></div>
+    </div>
+
+    <!-- iOS instructions -->
+    <div class="platform" id="ios">
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-text">Open <strong>Settings</strong> → <strong>Safari</strong> → <strong>Extensions</strong></div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-text">Tap <strong>ShortRemover</strong> and toggle it on</div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-text">Set permissions to <strong>Allow</strong> for youtube </div>
+        </div>
       </div>
     </div>
   </div>
+
+  <script>
+    const isMac = /Mac/.test(navigator.platform) && !/iPhone|iPad/.test(navigator.userAgent);
+    document.getElementById(isMac ? 'mac' : 'ios').classList.add('active');
+  </script>
 </body>
 </html>
