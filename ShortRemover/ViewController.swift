@@ -7,6 +7,8 @@
 
 import UIKit
 import WebKit
+import SafariServices
+
 
 class ViewController: UIViewController, WKNavigationDelegate, WKScriptMessageHandler {
 
