@@ -71,7 +71,6 @@
 				249189822F78A1F500665715 /* Exceptions for "ShortRemover Extension" folder in "ShortRemover Extension" target */,
 			);
 			explicitFolders = (
-				Resources/_locales,
 				Resources/images,
 			);
 			path = "ShortRemover Extension";
