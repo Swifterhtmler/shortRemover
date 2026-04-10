@@ -35,7 +35,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		247D079B2F8846EA0045CDBC /* ShortRemover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShortRemover.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		247D079B2F8846EA0045CDBC /* RemoveShorts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemoveShorts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		247D07B52F8846EB0045CDBC /* ShortRemover Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ShortRemover Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -99,7 +99,7 @@
 		247D079C2F8846EA0045CDBC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				247D079B2F8846EA0045CDBC /* ShortRemover.app */,
+				247D079B2F8846EA0045CDBC /* RemoveShorts.app */,
 				247D07B52F8846EB0045CDBC /* ShortRemover Extension.appex */,
 			);
 			name = Products;
@@ -129,7 +129,7 @@
 			packageProductDependencies = (
 			);
 			productName = ShortRemover;
-			productReference = 247D079B2F8846EA0045CDBC /* ShortRemover.app */;
+			productReference = 247D079B2F8846EA0045CDBC /* RemoveShorts.app */;
 			productType = "com.apple.product-type.application";
 		};
 		247D07B42F8846EB0045CDBC /* ShortRemover Extension */ = {
@@ -259,7 +259,7 @@
 					"-framework",
 					SafariServices,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = SubtitlesPip.ShortRemover.Extension;
+				PRODUCT_BUNDLE_IDENTIFIER = RemoveShorts.RemoveShorts.Extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -294,7 +294,7 @@
 					"-framework",
 					SafariServices,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = SubtitlesPip.ShortRemover.Extension;
+				PRODUCT_BUNDLE_IDENTIFIER = RemoveShorts.RemoveShorts.Extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -440,7 +440,8 @@
 				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = ShortRemover;
+				INFOPLIST_KEY_CFBundleDisplayName = RemoveShorts;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -455,8 +456,8 @@
 					"-framework",
 					WebKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = SubtitlesPip.ShortRemover;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = RemoveShorts.RemoveShorts;
+				PRODUCT_NAME = RemoveShorts;
 				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -482,7 +483,8 @@
 				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = ShortRemover;
+				INFOPLIST_KEY_CFBundleDisplayName = RemoveShorts;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -497,8 +499,8 @@
 					"-framework",
 					WebKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = SubtitlesPip.ShortRemover;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = RemoveShorts.RemoveShorts;
+				PRODUCT_NAME = RemoveShorts;
 				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
