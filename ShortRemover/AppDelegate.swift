@@ -5,13 +5,13 @@
 //  Created by Riku Kuisma on 9.4.2026.
 //
 
-import Cocoa
+import AppKit
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ notification: Notification) {
-        // Override point for customization after application launch.
+        TipTransactionListener.start()
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {

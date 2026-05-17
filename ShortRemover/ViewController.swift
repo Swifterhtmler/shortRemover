@@ -5,47 +5,31 @@
 //  Created by Riku Kuisma on 9.4.2026.
 //
 
-import Cocoa
-import SafariServices
+import AppKit
 import WebKit
-
-let extensionBundleIdentifier = "RemoveShorts.RemoveShorts"
+import SwiftUI
 
 class ViewController: NSViewController, WKNavigationDelegate, WKScriptMessageHandler {
 
-    @IBOutlet var webView: WKWebView!
+    @IBOutlet weak var webView: WKWebView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.webView.navigationDelegate = self
-        self.webView.configuration.userContentController.add(self, name: "controller")
-        self.webView.loadFileURL(Bundle.main.url(forResource: "Main", withExtension: "html")!, allowingReadAccessTo: Bundle.main.resourceURL!)
-    }
 
-    override func viewDidAppear() {
-        super.viewDidAppear()
-        view.window?.setContentSize(NSSize(width: 500, height: 600))
-    }
+        webView.configuration.userContentController.add(self, name: "controller")
+        webView.navigationDelegate = self
 
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        SFSafariExtensionManager.getStateOfSafariExtension(withIdentifier: extensionBundleIdentifier) { (state, error) in
-            guard let state = state, error == nil else { return }
-            DispatchQueue.main.async {
-                if #available(macOS 13, *) {
-                    webView.evaluateJavaScript("show(\(state.isEnabled), true)")
-                } else {
-                    webView.evaluateJavaScript("show(\(state.isEnabled), false)")
-                }
-            }
+        if let url = Bundle.main.url(forResource: "Main", withExtension: "html"),
+           let resourceURL = Bundle.main.resourceURL {
+            webView.loadFileURL(url, allowingReadAccessTo: resourceURL)
         }
     }
 
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        if (message.body as! String != "open-preferences") { return }
-        SFSafariApplication.showPreferencesForExtension(withIdentifier: extensionBundleIdentifier) { error in
-            DispatchQueue.main.async {
-                NSApplication.shared.terminate(nil)
-            }
-        }
+    // MARK: - WKScriptMessageHandler
+
+    func userContentController(_ userContentController: WKUserContentController,
+                               didReceive message: WKScriptMessage) {
+        guard let body = message.body as? String, body == "tip" else { return }
+        TipJarPresenter.show(from: self)
     }
 }

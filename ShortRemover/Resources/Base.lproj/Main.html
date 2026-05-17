@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RemoveShorts</title>
+  <title>ShortRemover</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap');
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -24,7 +24,7 @@
     .steps { display: flex; flex-direction: column; gap: 12px; text-align: left; }
     .step { display: flex; align-items: flex-start; gap: 14px; background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px; padding: 14px 16px; }
     .step-num { font-size: 12px; font-weight: 500; color: #ff4444; background: rgba(255,68,68,0.1); border-radius: 6px; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
-    .step-text { font-size: 14px; color: #ccc; line-height: 1.5; font-weight: 300; }
+    .step-text { font-size: 14px; color: #ccc; line-height: 1.5;rt font-weight: 300; }
     .step-text strong { color: #f0f0f0; font-weight: 500; }
     kbd { font-family: 'DM Sans', sans-serif; font-size: 12px; background: #2a2a2a; border: 1px solid #3a3a3a; border-radius: 5px; padding: 1px 6px; color: #ddd; }
   </style>
@@ -32,7 +32,7 @@
 <body>
   <div class="card">
     <img src="../icon-logo.png" class="icon" alt="ShortRemover">
-    <h1>RemoveShorts</h1>
+    <h1>ShortRemover</h1>
     <p class="tagline">Watch YouTube the way it was meant to be — without Shorts</p>
     <div class="steps">
       <div class="step">
@@ -47,7 +47,40 @@
         <div class="step-num">3</div>
         <div class="step-text">Enable it and allow access to <strong>youtube.com</strong></div>
       </div>
+      <button id="coffeeBtn" style="
+               margin-top: 32px;
+               background: none;
+               border: 1px solid #2a2a2a;
+               border-radius: 12px;
+               color: #888;
+               font-family: 'DM Sans', sans-serif;
+               font-size: 14px;
+               font-weight: 300;
+               padding: 12px 24px;
+               cursor: pointer;
+               width: 100%;
+             ">
+               ☕️ Buy me a coffee
+             </button>
     </div>
   </div>
+  <script>
+    function buyCoffee() {
+      if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.controller) {
+        console.log('Posting tip to native');
+        window.webkit.messageHandlers.controller.postMessage('tip');
+      } else {
+        console.warn('WKWebView message handler not available');
+      }
+    }
+
+    document.getElementById('coffeeBtn').addEventListener('click', buyCoffee);
+
+    if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.controller) {
+      console.log('WKWebView message handler is available');
+    } else {
+      console.warn('WKWebView message handler is NOT available on load');
+    }
+  </script>
 </body>
 </html>
