@@ -8,7 +8,8 @@ const SELECTORS = [
       'ytd-video-renderer:has(a[href*="/shorts/"])',
       'ytd-grid-video-renderer:has(a[href*="/shorts/"])',
       'ytGridShelfViewModelHost ytd-item-section-renderer ytGridShelfViewModelHostHasBottomButton',
-
+      
+      
       // Mobile/modern YouTube
       'div.ytGridShelfViewModelGridShelfRow',
       'ytm-shorts-lockup-view-model-v2',
@@ -18,6 +19,16 @@ const SELECTORS = [
       'ytm-pivot-bar-item-renderer:has(a[href="/shorts"])',
       'div.pivot-shorts',
       'ytm-pivot-bar-renderer a[href="/shorts"]',
+      'ytm-compact-playlist-renderer a[href*="/shorts/"]',
+      
+      'ytm-media-item:has(a[href*="/shorts/"])',
+      'ytm-video-with-context-renderer:has(a[href*="/shorts/"])',
+      
+      'yt-tab-shape[tab-title="Shorts"]',
+      'yt-tab-shape[tab-title*="Shorts"]',
+      'yt-tab-shape:has(.ytTabShapeTab[aria-label*="Shorts"])',
+      
+      
 ];
 
 let enabled = true;
@@ -37,6 +48,8 @@ browser.runtime.onMessage.addListener((msg) => {
     show();
   }
 });
+
+
 
 function hide() {
   SELECTORS.forEach(sel => {

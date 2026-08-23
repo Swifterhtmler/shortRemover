@@ -8,6 +8,7 @@
 import UIKit
 import WebKit
 import SafariServices
+import SwiftUI
 
 
 class ViewController: UIViewController, WKNavigationDelegate, WKScriptMessageHandler {
@@ -30,7 +31,14 @@ class ViewController: UIViewController, WKNavigationDelegate, WKScriptMessageHan
     }
 
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        // Override point for customization.
+        if message.body as? String == "tip" {
+            let tipVC = UIHostingController(rootView: TipJarView())
+            tipVC.modalPresentationStyle = .pageSheet
+            if let sheet = tipVC.sheetPresentationController {
+                sheet.detents = [.medium()]
+            }
+            present(tipVC, animated: true)
+        }
     }
 
 }

@@ -20,7 +20,7 @@
       "run_at": "document_idle"
     }
   ],
-  "permissions": ["declarativeNetRequest", "storage", "tabs"],
+  "permissions": ["declarativeNetRequest", "storage", "tabs", "notifications"],
   "host_permissions": ["*://*.youtube.com/*"],
   "declarative_net_request": {
     "rule_resources": [
